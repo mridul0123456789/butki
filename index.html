@@ -55,10 +55,21 @@
 <p class="p1">Hii BUTKII!!!💕 <br> It is to remind you that I am ALWAYS with youh!</p>
 </div>
 
-<audio>
-   <source src="./gt.mp3" type="audio/mpeg">
+<audio id="bg-music" autoplay muted>
+    <source src="your-music-file.mp3" type="audio/mpeg">
 </audio>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let audio = document.getElementById("bg-music");
+        audio.muted = true; // Start muted
+        audio.play().then(() => {
+            audio.muted = false; // Unmute after playback starts
+        }).catch(error => {
+            console.log("Autoplay blocked, user interaction needed:", error);
+        });
+    });
+</script>
 
 <!-- partial -->
   <script  src="./mobile.js"></script>
